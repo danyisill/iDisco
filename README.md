@@ -7,3 +7,7 @@ How to build?
 2. make
 
 Or just download binary from releases
+
+Bugs
+
+1. it connects to discord only after changing iTunes' state
