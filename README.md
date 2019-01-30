@@ -12,3 +12,4 @@ Bugs
 
 1. discord connection isnt synchronized
 2. need to correct timestamp if actual playback starts after notification was posted
+3. keeps itunes open all the time

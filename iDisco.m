@@ -8,7 +8,7 @@
 
 #define dpush() Discord_UpdateConnection(); Discord_RunCallbacks();
 
-BOOL ready_b;
+BOOL ready_b, np;
 iTunesApplication *iTunes;
 iTunesTrack *cur;
 
@@ -24,7 +24,7 @@ void post(time_t timestamp, NSString *top, NSString *bottom){
 }
 void push_trackinfo(void){
 	cur = [iTunes currentTrack];
-	BOOL np = [iTunes playerState] == iTunesEPlSPlaying;
+	np = [iTunes playerState] == iTunesEPlSPlaying;
 	post(np?(time_t) difftime(time(NULL), [iTunes playerPosition]):0,
 		[NSString stringWithFormat:@"%@ - %@", [cur artist], [cur album]],
 		[NSString stringWithFormat:@"%@%s", [cur name], np?"":" (Paused)"]);
@@ -60,7 +60,8 @@ int main(void){
 	[[NSOperationQueue mainQueue] addOperationWithBlock: ^(void){
 		sleep(3); //it better take less than 3s
 		dpush();
-		if(ready_b)
+		puts("init");
+		if(ready_b && [iTunes isRunning])
 			push_trackinfo();
 	}];
 	[[NSDistributedNotificationCenter defaultCenter]
