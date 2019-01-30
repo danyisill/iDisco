@@ -3,7 +3,7 @@ Why use it?
 2. written in objective c so it's pretty snappy
 
 How to build?
-1. build official [discord-rpc](https://github.com/discordapp/discord-rpc) with ENABLE_IO_THREAD=OFF
+1. build official [discord-rpc](https://github.com/discordapp/discord-rpc)
 2. make
 
 Or just download binary from releases
