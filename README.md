@@ -10,5 +10,4 @@ Or just download binary from releases
 
 Bugs
 
-1. discord connection isnt synchronized
-2. need to correct timestamp if actual playback starts after notification was posted
+1. it connects to discord only after changing iTunes' state
